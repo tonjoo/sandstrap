@@ -78,8 +78,6 @@
 				</div>
 			</div>
 		</footer>
-		
-		<a href="#top" title="Scroll to top" id="scroll-top-link" class="scroll-top"></a>
 	</div>
 	<!-- /#wrapper -->
 
