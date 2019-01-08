@@ -1,0 +1,19 @@
+{
+  "name": "tonjoo-grunt",
+  "version": "1.0.0",
+  "description": "Tonjoo Grunt",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tonjoo",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.1.0",
+    "npm-check-updates": "^2.15.0"
+  }
+}

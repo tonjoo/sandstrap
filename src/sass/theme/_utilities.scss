@@ -1,0 +1,64 @@
+.ml-auto {
+	margin-left: auto !important;
+}
+
+.d-none {
+	display: none !important;
+}
+.d-block {
+	display: block !important;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+.align-items-center {
+	align-items: center;
+}
+
+@include media-breakpoint-up(lg) {
+	.ml-lg-auto,
+	.mx-lg-auto {
+		margin-left: auto !important;
+	}
+	.mr-lg-auto,
+	.mx-lg-auto {
+		margin-right: auto !important;
+	}
+	
+	.d-lg-block {
+		display: block !important;
+	}
+}
+@include media-breakpoint-up(sm) {
+	.d-sm-none {
+		display: none !important;
+	}
+	.ml-sm-auto {
+		margin-left: auto !important;
+	}
+}
+
+.no-click {
+	pointer-events: none;
+}
+.img-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+}
+.img-contain {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: contain;
+	display: block;
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-center {
+	text-align: center;
+}

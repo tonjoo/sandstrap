@@ -1,0 +1,67 @@
+// Make Object Vertical & Horizontal Center
+@mixin center-middle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+// Make Object Vertical Center
+@mixin vertical-center($position) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// Make Object Horizontal Center
+@mixin horizontal-center($position) {
+	position: $position;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/* overlay */
+@mixin overlay-full {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@mixin make-darken-hover($color) {
+	&:hover {
+		color: darken($color, 5%);
+	}
+}
+@mixin make-darken-hover-bg($color) {
+	&:hover {
+		background-color: darken($color, 5%);
+	}
+}
+
+@mixin make-btn($bgcolor, $color) {
+	background-color: $bgcolor;
+	color: $color;
+	
+	&:focus,
+	&:active,
+	&:focus:active,
+	&:active:hover {
+		background-color: $bgcolor;
+		color: $color;
+	}
+	&:hover {
+		color: $color;
+		background-color: darken($bgcolor, 5%);
+	}
+}
+
+@mixin clear {
+	&:before,
+	&:after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+}
