@@ -180,6 +180,10 @@ body {
 		}
 	}
 }
+.main-header {
+	position: relative;
+	z-index: 1052;
+}
 .navbar-top {
 	background-color: $color-secondary;
 	padding: 0;

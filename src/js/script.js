@@ -69,4 +69,37 @@
 		});
 	});
 
+	function collapseHide(elm) {
+		var animation = $('[data-target="'+ elm +'"').data('animation');
+
+		if (animation == null) {
+			animation = 'true';
+		}
+
+		$(elm).removeClass('show');
+		$('[data-target="'+ elm +'"').addClass('collapsed');
+
+		if (animation) {
+			$(elm).slideUp();
+		}
+
+		$(elm).trigger('hidden.collapse');
+	}
+	function collapseShow(elm) {
+		var animation = $('[data-target="'+ elm +'"').data('animation');
+
+		if (animation == null) {
+			animation = 'true';
+		}
+
+		$(elm).addClass('show');
+		$('[data-target="'+ elm +'"').removeClass('collapsed');
+
+		if (animation) {
+			$(elm).slideDown();
+		}
+
+		$(elm).trigger('show.collapse');
+	}
+
 }(jQuery));
