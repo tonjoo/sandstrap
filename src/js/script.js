@@ -1,8 +1,6 @@
 (function ($) {
 
 	$(document).ready(function() {
-		scrollTopDisplay();
-
 		/* Data toggle Collapse
 		-------------------------------------------- */
 		$('[data-toggle="collapse"]').on('click', function(e) {
