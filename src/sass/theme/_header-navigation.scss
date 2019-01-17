@@ -72,6 +72,7 @@
 		transform: translate(0, -50%);
 		font-size: 23px;
 		color: #aaa;
+		cursor: pointer;
 	}
 }
 .navbar-toggler {
@@ -135,7 +136,7 @@
 			right: 0;
 			bottom: 0;
 			background-color: $color-primary;
-			height: 100vh;
+			height: 100%;
 			width: 50%;
 			z-index: 1053;			
 			transition: all .3s;
@@ -171,17 +172,18 @@ body {
 	&.navbar-open {
 		overflow-y: hidden;
 
-		.main-header{
-			opacity: 1 !important;
-
+		.main-header {
 			.navbar-overlay {
 				display: block;
 			}
 		}
 	}
 }
-.main-header {
-	position: relative;
+.header-fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
 	z-index: 1052;
 }
 .navbar-top {
@@ -201,9 +203,6 @@ body {
 				padding: 0 10px;
 				color: $color-primary;
 				display: block;
-			}
-			+ li > a {
-				border-left: 1px solid $color-primary;
 			}
 		}
 		.pll-parent-menu-item {
@@ -278,14 +277,15 @@ body {
 			text-transform: uppercase;
 			font-weight: 600;
 			display: block;
+			opacity: .8;
 
 			&:hover {
-				color: $color-secondary;
+				opacity: 1;
 			}
 		}
 		.current-menu-item {
 			a {
-				color: $color-secondary;
+				opacity: 1;
 			}
 		}
 	}
@@ -294,19 +294,20 @@ body {
 	display: block;
 	max-width: 300px;
 	margin-right: 30px;
+	padding: 10px 0;
 
 	> img {
+		width: auto;
+		max-height: 70px;
 		display: block;
 	}
 }
 .header-search {
 	padding: 13px 0;
 	margin-left: 26px;
+	opacity: .8;
+	transition: all .3s;
 	
-	> svg,
-	.header-search-close {
-		transition: all .3s;
-	}
 	> svg {
 		width: 15px;
 		height: 15px;
@@ -350,21 +351,13 @@ body {
 		}
 	}
 	&:hover {
-		> svg {
-			fill: $color-secondary;
-		}
-		.header-search-close {
-			&:after,
-			&:before {
-				background-color: $color-secondary;
-			}
-		}
+		opacity: 1;
 	}
 	&__form {
 		position: absolute;
 		right: 0;
 		top: 100%;
-		background-color: #06327b;
+		background-color: $color-primary;
 		padding: 10px;
 		display: none;
 		

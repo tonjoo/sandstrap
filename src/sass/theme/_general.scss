@@ -20,6 +20,7 @@ a {
 	color: $color-primary;
 	text-decoration: none;
 	outline: 0;
+	transition: all .3s;
 	
 	&:focus {
 		outline: 0;
@@ -34,4 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	margin-top: 0;
 	margin-bottom: 15px;
+}
+input {
+	border: 1px solid #ccc;
+	height: 32px;
+	padding: 0 12px;
+	color: #555;
+	outline: 0;
+	appearance: none;
 }

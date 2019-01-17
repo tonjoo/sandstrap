@@ -3,6 +3,38 @@
 	$(document).ready(function() {
 		/* Data toggle Collapse
 		-------------------------------------------- */
+		var ev = 'click';
+		if ('ontouchstart' in window) {
+			ev = 'touchstart';
+		}
+		$(document).on(ev, function() {
+			$('[data-toggle="collapse"]').each(function() {
+				if ($(this).is(':visible')) {
+					var animation = $(this).data('animation');
+					var target = $(this).data('target');
+
+					if (animation == null) {
+						animation = 'true';
+					}
+
+					$(this).addClass('collapsed');
+					$(target).removeClass('show');
+
+					if (animation) {
+						$(target).stop().slideUp();
+					}
+
+					$(target).trigger('hidden.collapse');
+				}
+			});
+		});
+		$('[data-toggle="collapse"]').each(function() {
+			var target = $(this).data('target');
+
+			$(target).on(ev, function(e) {
+				e.stopPropagation();
+			});
+		});
 		$('[data-toggle="collapse"]').on('click', function(e) {
 			var target = $(this).data('target');
 			var animation = $(this).data('animation');
@@ -18,45 +50,24 @@
 				$(target).trigger('show.collapse');
 
 				if (animation) {
-					$(target).slideDown();
+					$(target).stop().slideDown();
 				}
 			} else {
 				$(target).trigger('hidden.collapse');
 				
 				if (animation) {
-					$(target).slideUp();
+					$(target).stop().slideUp();
 				}
 			}
 
+			e.stopPropagation();
 			e.preventDefault();
+		});
+
+		$('[data-toggle="collapse"]').on(ev, function(e) {
 			e.stopPropagation();
 		});
-		$('body').on('click', function() {
-			$('[data-toggle="collapse"').each(function() {
-				if ($(this).is(':visible')) {
-					var animation = $(this).data('animation');
-					var target = $(this).data('target');
-
-					if (animation == null) {
-						animation = 'true';
-					}
-
-					$(this).addClass('collapsed');
-					$(target).removeClass('show');
-
-					if (animation) {
-						$(target).slideUp();
-					}
-
-					$(target).trigger('hidden.collapse');
-				}
-			});
-		});
-		$('.navbar-collapse').on('click', function(e) {
-			e.stopPropagation();
-		});
-
-		$('.navbar-close, .navbar-overlay').on('click', function(e) {
+		$('.navbar-close, .navbar-overlay').on(ev, function(e) {
 			collapseHide('#navbar');
 
 			e.stopPropagation();
@@ -80,7 +91,7 @@
 		$('[data-target="'+ elm +'"').addClass('collapsed');
 
 		if (animation) {
-			$(elm).slideUp();
+			$(elm).stop().slideUp();
 		}
 
 		$(elm).trigger('hidden.collapse');
@@ -96,7 +107,7 @@
 		$('[data-target="'+ elm +'"').removeClass('collapsed');
 
 		if (animation) {
-			$(elm).slideDown();
+			$(elm).stop().slideDown();
 		}
 
 		$(elm).trigger('show.collapse');

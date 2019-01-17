@@ -3,16 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>PPM FK UII HTML</title>
-	<link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
-	<link rel="stylesheet" href="assets/css/style.min.css?v=0.3">
-	<script src="assets/js/jquery-3.1.1.min.js"></script>
+	<title>SANDSTRAP DEMO</title>
+	<link rel="icon" type="image/png" href="assets/images/icon/favicon.png">
+	<link rel="stylesheet" href="../assets/css/style.min.css?v=0.3">
+
+	<!-- Demo Style -->
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<!-- End Demo Style -->
+
+	<script src="../assets/js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body class="">
 	
 	<div id="wrapper">
-		<header id="main-header" class="main-header">
+		<header id="main-header" class="main-header header-fixed">
 			<div class="navbar-overlay"></div>
 			<nav class="navbar-top navbar-collapse" id="navbar-top">
 				<div class="container">
@@ -20,16 +25,10 @@
 						<div class="col-sm-auto ml-sm-auto">							
 							<ul class="nav navbar-nav">
 								<li>
-									<a href="#" title="Universitas">Universitas</a>
+									<a href="#" title="Login">Login</a>
 								</li>
 								<li>
-									<a href="#" title="Unisys">Unisys</a>
-								</li>
-								<li>
-									<a href="#" title="Klasiber">Klasiber</a>
-								</li>
-								<li>
-									<a href="#" title="Repositori">Repositori</a>
+									<a href="#" title="Register">Register</a>
 								</li>
 								<li>
 									<a href="#" title="Email">Email</a>
@@ -56,7 +55,7 @@
 			<nav class="navbar-primary navbar-expand-lg" aria-label="Main navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="homepage.php" class="navbar-brand"><img src="assets/images/logo-fk.png" alt="Logo FK UII"></a>
+						<a href="homepage.php" class="navbar-brand"><img src="assets/images/logo-primary.png" alt="Logo FK UII"></a>
 
 						<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-animation="false" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
@@ -80,14 +79,10 @@
 							</form>
 						</div>
 						<ul class="navbar-nav main-menu ml-lg-auto">
-							<li class="current-menu-item"><a href="profil.php">Profil</a></li>
-							<li class=""><a href="#">Studi</a></li>
-							<li class=""><a href="#">Inovasi</a></li>
-							<li class=""><a href="#">Mahasiswa</a></li>
-							<li class=""><a href="#">Kemitraan</a></li>
-							<li class=""><a href="#">Dakwah</a></li>
-							<li class=""><a href="#">Reportase</a></li>
-							<li class=""><a href="#">Saran &amp; Masukan</a></li>
+							<li class="current-menu-item"><a href="index.php">Home</a></li>
+							<li class=""><a href="documentation.php">Documentation</a></li>
+							<li class=""><a href="example.php">Example</a></li>
+							<li class=""><a href="https://git.tonjoo.com/tonjoo/sandstrap">Download</a></li>
 						</ul>
 						<a class="header-search d-none d-lg-block collapsed" href="#" title="" data-toggle="collapse" data-target="#header-search-form">
 	                        <span class="header-search-close"></span>

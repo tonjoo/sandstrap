@@ -303,6 +303,16 @@
 	.container {
 		max-width: 960px;
 	}
+	.gap-lg-60 {
+		margin-right: -30px;
+		margin-left: -30px;
+
+		> .col,
+		> [class*="col-"] {
+			padding-right: 30px;
+			padding-left: 30px;
+		}
+	}
 	.col-lg {
 		-ms-flex-preferred-size: 0;
 		flex-basis: 0;
@@ -454,5 +464,16 @@
 		-ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;
+	}
+	.gap-60,
+	.gap-40 {
+		margin-right: -15px;
+		margin-left: -15px;
+
+		> .col,
+		> [class*="col-"] {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
 	}
 }

@@ -8,9 +8,24 @@
 .d-block {
 	display: block !important;
 }
+.d-flex {
+	display: flex !important;
+}
+.d-table {
+	display: table !important;
+}
 
 .justify-content-center {
 	justify-content: center;
+}
+.justify-content-end {
+	justify-content: flex-end;
+}
+.justify-content-between {
+	justify-content: space-between;
+}
+.justify-content-around {
+	justify-content: space-between;
 }
 .align-items-center {
 	align-items: center;

@@ -22,11 +22,12 @@ module.exports = function(grunt) {
 					// nested, expanded, compact, compressed
 					sourceMap: true,
 					// tell Sass to look in the Bootstrap stylesheets directory when compiling
-					loadPath: 'src/sass'
+					loadPath: ['src/sass', 'demo/src/sass']
 				},
 				files: {
 					// the first path is the output and the second is the input
-					'assets/css/style.min.css': 'src/sass/style.scss'
+					'assets/css/style.min.css': 'src/sass/style.scss',
+					'demo/assets/css/demo.css': 'demo/src/sass/style-demo.scss'
 				}
 			},
 		},
@@ -38,7 +39,8 @@ module.exports = function(grunt) {
 					browsers: ['last 2 versions', 'ie 8', 'ie 9']
 				},
 				files: {
-					'assets/css/style.min.css':'assets/css/style.min.css'
+					'assets/css/style.min.css':'assets/css/style.min.css',
+					'demo/assets/css/demo.css':'demo/assets/css/demo.css'
 				}
 			}
 		},
@@ -62,7 +64,7 @@ module.exports = function(grunt) {
 		        tasks: 'uglify:production'
 		    },
 		 	scripts: {
-		 		files: ['src/**/*.scss'],
+		 		files: ['src/**/*.scss', 'demo/**/*.scss'],
 		 		tasks: ['sass:dev', 'autoprefixer']
 		 	}
 		}

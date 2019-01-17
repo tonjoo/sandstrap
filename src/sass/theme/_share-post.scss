@@ -1,0 +1,36 @@
+.share-post {
+	margin: 40px -6px 60px;
+
+	&__item {
+		padding: 0 6px;
+	}
+	.social-item {
+		font-size: 18px;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		text-align: center;
+		color: #fff;
+		display: block;
+	}
+	.social-facebook {
+		background-color: $facebook-color;
+		@include make-darken-hover-bg($facebook-color);
+	}
+	.social-twitter {
+		background-color: $twitter-color;
+		@include make-darken-hover-bg($twitter-color);
+	}
+	.social-linkedin {
+		background-color: $linkedin-color;
+		@include make-darken-hover-bg($linkedin-color);
+	}
+	.social-google {
+		background-color: $google-color;
+		@include make-darken-hover-bg($google-color);
+	}
+	.social-instagram {
+		background-color: $instagram-color;
+		@include make-darken-hover-bg($instagram-color);
+	}
+}

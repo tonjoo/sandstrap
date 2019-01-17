@@ -1,0 +1,87 @@
+/*!
+ * Demo Style
+ * Just for demo site dont include this to project
+ */
+
+@import "./src/sass/mixins";
+@import "./src/sass/variables";
+@import "./src/sass/ionicons";
+
+.main-section {
+	margin: 30px 0;
+
+	.row {
+		+ .row {
+			margin-top: 1rem;
+		}
+	}
+}
+.section-title {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+.col-item {
+	border: 1px solid #ddd;
+	height: 200px;
+	background-color: #f1f1f1;
+}
+code {
+    padding: 2px 4px;
+    color: #c0341d;
+    background-color: #fbe5e1;
+    border-radius: 4px;
+    font-size: 90%;
+}
+pre {
+    display: block;
+    padding: 8px 12px;
+    margin: 0 0 8px;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #2e2e2e;
+    background-color: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    overflow: auto;
+}
+
+.sidebar {
+	border: 1px solid $border-color;
+	padding: 15px 20px;
+	margin-top: 30px;
+	border-top: 5px solid $color-primary;
+	transition: all .3s;
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 10px;
+		}
+	}
+	a {
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-black;
+
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	
+	&-wrap {
+		width: 350px;
+	}
+	&--scrolled {
+		position: fixed;
+		top: 0;
+		width: inherit;		
+	}
+}
+.wrapper-header-fixed {
+	.sidebar--scrolled {
+		top: 121px;
+	}
+}
