@@ -17,7 +17,7 @@
 <body class="">
 	
 	<div id="wrapper">
-		<header id="main-header" class="main-header header-fixed">
+		<header id="main-header" class="main-header">
 			<div class="navbar-overlay"></div>
 			<nav class="navbar-top navbar-collapse" id="navbar-top">
 				<div class="container">
@@ -34,18 +34,51 @@
 									<a href="#" title="Email">Email</a>
 								</li>
 								<li class="dropdown pll-parent-menu-item">
+									<?php if (basename($_SERVER['SCRIPT_NAME']) == "home-id.php") { ?>
 									<a class="no-click" href="#">
 										<img src="assets/images/icon/in.gif">
 										<span>Indonesia</span>
 									</a>
 									<ul class="dropdown-menu" role="menu">
 										<li class="lang-item">
-											<a href="#">
+											<a href="index.php">
 												<img src="assets/images/icon/en.gif">
 												<span>English</span>
 											</a>
 										</li>
 									</ul>
+
+									<?php } elseif (basename($_SERVER['SCRIPT_NAME']) == "index.php") { ?>
+									
+									<a class="no-click" href="#">
+										<img src="assets/images/icon/en.gif">
+										<span>English</span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="lang-item">
+											<a href="home-id.php">
+												<img src="assets/images/icon/in.gif">
+												<span>Indonesia</span>
+											</a>
+										</li>
+									</ul>
+
+									<?php } elseif (basename($_SERVER['SCRIPT_NAME']) == "single.php") { ?>
+										
+									<a class="no-click" href="#">
+										<img src="assets/images/icon/en.gif">
+										<span>English</span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="lang-item">
+											<a href="#">
+												<img src="assets/images/icon/in.gif">
+												<span>Indonesia</span>
+											</a>
+										</li>
+									</ul>
+
+									<?php } ?>
 								</li>
 							</ul>
 						</div>
@@ -81,7 +114,7 @@
 						<ul class="navbar-nav main-menu ml-lg-auto">
 							<li class="current-menu-item"><a href="index.php">Home</a></li>
 							<li class=""><a href="documentation.php">Documentation</a></li>
-							<li class=""><a href="example.php">Example</a></li>
+							<li class=""><a href="single.php">Example</a></li>
 							<li class=""><a href="https://git.tonjoo.com/tonjoo/sandstrap">Download</a></li>
 						</ul>
 						<a class="header-search d-none d-lg-block collapsed" href="#" title="" data-toggle="collapse" data-target="#header-search-form">

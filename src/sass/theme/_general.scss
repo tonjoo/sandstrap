@@ -36,6 +36,24 @@ p {
 	margin-top: 0;
 	margin-bottom: 15px;
 }
+table, td, th {  
+	border: 1px solid #ddd;
+	text-align: left;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+th, td {
+	padding: 12px 15px;
+	vertical-align: top;
+}
+td {
+	font-size: 14px;
+}
+pre {
+	overflow: auto;
+}
 input {
 	border: 1px solid #ccc;
 	height: 32px;

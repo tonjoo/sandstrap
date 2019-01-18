@@ -5,7 +5,6 @@
 
 @import "./src/sass/mixins";
 @import "./src/sass/variables";
-@import "./src/sass/ionicons";
 
 .main-section {
 	margin: 30px 0;
@@ -14,7 +13,13 @@
 		+ .row {
 			margin-top: 30px;
 		}
+		+ .content {
+			margin-top: 30px;
+		}
 	}
+}
+#page-wrapper {
+	padding: 50px 0 120px;
 }
 .section-title {
 	font-size: 28px;
@@ -22,7 +27,7 @@
 }
 .col-item {
 	border: 1px solid #ddd;
-	height: 200px;
+	height: 70px;
 	background-color: #f1f1f1;
 }
 code {
@@ -49,6 +54,7 @@ pre {
 	border: 1px solid $border-color;
 	padding: 15px 20px;
 	margin-top: 30px;
+	margin-bottom: 30px;
 	border-top: 5px solid $color-primary;
 	transition: all .3s;
 
@@ -73,11 +79,16 @@ pre {
 	
 	&-wrap {
 		width: 350px;
+		position: relative;
 	}
 	&--scrolled {
 		position: fixed;
 		top: 0;
 		width: inherit;		
+	}
+	&--bottom {
+		position: absolute;
+		left: 0;
 	}
 }
 .wrapper-header-fixed {

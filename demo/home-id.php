@@ -15,9 +15,9 @@
 
                         <div class="content">
                             <ol>
-                                <li>Total css built size: 25KB</li>
-                                <li>Total js built size: 2KB</li>
-                                <li>Support pure javascript without jQuery</li>
+                                <li>Ukuran file css yang dihasilkan: 23KB</li>
+                                <li>Ukurann file js yang dihasilkan: 2KB</li>
+                                <li>Support pure javascript tanpa jQuery</li>
                             </ol>                       
                         </div>
                     </section>
@@ -26,12 +26,12 @@
                         <h2 class="section-title" id="build-system">Build System</h2>
 
                         <div class="content">
-                            <p>For build system we use grunt, with dependencies:</p>
+                            <p>Build system menggunakan grunt, module yang digunakan:</p>
                             <ol>
-                                <li>SASS, to compile file scss to css</li>
-                                <li>Autoprefixer, if previously you often use vendor-prefix mixins, this time we remove vendor-prefix mixin and replace it with grunt autoprefixer module which automatically generates the vendor prefix for major browser support</li>
-                                <li>Uglify, to minify js</li>
-                                <li>Watch, to read our file changes and automatically run another dependencies</li>
+                                <li>SASS, untuk compile file scss ke css</li>
+                                <li>Autoprefixer, kalo sebelumnya sering menggunakan mixin vendor-prefix kali ini kita menghilangkan mixin tersebut dan menggantinya dengan module grunt autoprefixer yang otomatis generate prefix vendor agar support major browser</li>
+                                <li>Uglify, untuk minify js</li>
+                                <li>Watch, fitur watch untuk membaca perubahan file kita dan otomatis menjalankan module yang lain</li>
                             </ol>                       
                         </div>
                     </section>
@@ -70,7 +70,7 @@
                         <h2 class="section-title" id="grid-example">Grid Example</h2>
                         
                         <div class="content">
-                            <p>Menggunakan full fitur grid bootstrap 4 <code>.container, .row, .col-*-*</code>. Another example you can refer to <a href="https://getbootstrap.com/docs/4.1/layout/grid/">https://getbootstrap.com/docs/4.1/layout/grid/</a></p>
+                            <p>Menggunakan full fitur grid bootstrap 4 <code>.container, .row, .col-*-*</code>.</p>
 
                             <p><b>Equal Width</b></p>
 
@@ -90,41 +90,6 @@
                             <div class="col">
                                 <div class="col-item"></div>
                             </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-
-                        <div class="content">
-                            <p><b>Custom Row Gap</b></p>
-
-                            <p>
-                                <pre><?= htmlentities($custom_gap, ENT_COMPAT, 'UTF-8') ?></pre>
-                            </p>
-                        </div>
-                        <div class="row gap-15">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row gap-40">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row gap-60">
                             <div class="col">
                                 <div class="col-item"></div>
                             </div>
@@ -174,25 +139,10 @@
                     </section>
 
                     <section class="main-section">
-                        <h2 class="section-title" id="breadcrumb">Breadcrumb</h2>
+                        <h2 class="section-title" id="icon">Icon</h2>
 
                         <div class="content">
-                            <p><pre><?= htmlentities($breadcrumb, ENT_COMPAT, 'UTF-8') ?></pre></p>
-                        </div>
-                        <div class="breadcrumb">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Category</a></li>
-                                <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span></li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <section class="main-section">
-                        <h2 class="section-title" id=""icon>Icon</h2>
-
-                        <div class="content">
-                            <p>Built with <a href="https://ionicons.com/v2/" target="_blank">ionicons v2</a>. to reduce size we only use necessary icon, if you need to add another icon copy icon class in <code>src/sass/ionicons/_ionicons-icons-full.scss</code> and paste to <code>src/sass/ionicons/_ionicons-icons.scss</code></p>
+                            <p>Built with <a href="https://ionicons.com/v2/" target="_blank">ionicons v2</a>. for cuting size we just use necessary icon, if you need to add another icon copy class in <code>src/sass/ionicons/_ionicons-icons-full.scss</code> to <code>src/sass/ionicons/_ionicons-icons.scss</code></p>
                         </div>
                     </section>
 
@@ -256,8 +206,6 @@
 
                         <div class="content">
                             <p>Build with general header footer full responsive, use in this demo, and example single page <a href="single.php">example-post</a></p>
-
-                            <p>If you need sticky header just add class <code>header-fixed</code></p>
                         </div>
                     </section>
                 </div>

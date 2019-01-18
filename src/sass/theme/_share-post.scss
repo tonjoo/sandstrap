@@ -33,4 +33,8 @@
 		background-color: $instagram-color;
 		@include make-darken-hover-bg($instagram-color);
 	}
+	.social-whatsapp {
+		background-color: $whatsapp-color;
+		@include make-darken-hover-bg($whatsapp-color);
+	}
 }

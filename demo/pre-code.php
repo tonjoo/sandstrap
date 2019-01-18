@@ -121,4 +121,82 @@ $utilities = '.ml-auto {
 .text-center {
     text-align: center;
 }';
+
+$pagination = '<div class="pagination-wrapper">
+    <ul class="page-numbers">
+        <li><a class="prev page-numbers" href="#"><span class="ion-chevron-left"></span></a></li>
+        <li><span aria-current="page" class="page-numbers current">1</span></li>
+        <li><a class="page-numbers" href="#">2</a></li>
+        <li><a class="page-numbers" href="#">3</a></li>
+        <li><a class="page-numbers" href="#">...</a></li>
+        <li><a class="page-numbers" href="#">22</a></li>
+        <li><a class="next page-numbers" href="#"><span class="ion-chevron-right"></span></a></li>
+    </ul>
+</div>';
+
+$share = '<div class="share-post d-flex justify-content-end">
+    <div class="share-post__item">
+        <a class="social-item social-facebook" href="#"><span class="social-item__icon"><i class="ion-social-facebook"></i></span></a>
+    </div>
+    <div class="share-post__item">
+        <a class="social-item social-twitter" href="#"><span class="social-item__icon"><i class="ion-social-twitter"></i></span></a>
+    </div>
+    <div class="share-post__item">
+        <a class="social-item social-google" href="#"><span class="social-item__icon"><i class="ion-social-googleplus"></i></span></a>
+    </div>
+    <div class="share-post__item">
+        <a class="social-item social-linkedin" href="#"><span class="social-item__icon"><i class="ion-social-linkedin"></i></span></a>
+    </div>
+    <div class="share-post__item">
+        <a href="#" class="social-item social-whatsapp"><i class="ion-social-whatsapp"></i></a>
+    </div>
+    <div class="share-post__item">
+        <a href="#" class="social-item social-instagram"><i class="ion-social-instagram"></i></a>
+    </div>
+</div>';
+
+$btn = '<a href="#" class="btn btn-primary">Example Button</a>';
+$make_btn = '.btn-custom {
+    @include make-btn($bg-color, $fill-color);
+}';
+$select = '<div class="select-box">
+    <select name="" id="">
+        <option value="">Date (newest)</option>
+        <option value="">Date (latest)</option>
+    </select>
+</div>';
+$custom_gap = '<div class="row gap-15">
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+</div>
+<div class="row gap-40">
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+</div>
+<div class="row gap-60">
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+</div>';
+$breadcrumb = '<div class="breadcrumb">
+    <ul>
+        <li><a href="homepage.php">Beranda</a></li>
+        <li><a href="berita.php">Agenda</a></li>
+        <li><span>International Conference on Chemistry, Chemical Process and Engineering (IC3PE) 2019</span></li>
+    </ul>
+</div>';
 ?>

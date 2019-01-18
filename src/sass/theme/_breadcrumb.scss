@@ -18,7 +18,7 @@
 				content: $ionicon-var-ios-arrow-forward;
 				font-family: $ionicons-font-family;
 				display: inline;
-				color: #30b1f3;
+				color: $link-color;
 				vertical-align: middle;
 				margin: 0 8px;
 				line-height: 1;
@@ -30,14 +30,16 @@
 	span {
 		font-size: 14px;
 		font-family: $font-headings;
-		white-space: nowrap;
-		color: #888;
+		white-space: nowrap;		
 		display: inline;
 		vertical-align: middle;
-		line-height: 1.1;
+		line-height: 1.1;		
+	}
+	a {
+		color: $link-color;
 
 		&:hover {
-			color: $color-primary;
+			color: darken($link-color, 5%);
 		}
 	}
 	span {

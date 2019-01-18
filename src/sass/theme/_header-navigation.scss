@@ -212,7 +212,7 @@ body {
 		}
 	}
 	.pll-parent-menu-item {
-		// display: none;
+		min-width: 105px;
 		position: relative;
 
 		a {	
@@ -237,7 +237,7 @@ body {
 			transition: transform .3s ease, opacity .2s ease;
 			position: absolute;
 			top: 100%;
-			width: 100%;
+			min-width: 100%;
 			left: 0;
 			z-index: 1000;
 

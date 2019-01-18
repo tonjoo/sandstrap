@@ -10,6 +10,13 @@
 		font-size: 16px;
 		color: #4a4a4a;
 	}
+	img,
+	p > img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
 	ul,
 	ol {
 		padding-left: 25px;
@@ -64,11 +71,24 @@
 		}
 	}
 	a {
-		color: lighten($color-primary, 10%);
+		color: $link-color;
 
 		&:hover {
 			text-decoration: none;
-			color: $color-primary;
+			color: darken($link-color, 5%);
+		}
+	}
+	blockquote {
+		margin: 15px 0;
+		padding-top: 5px;
+		padding-left: 30px;
+		font-style: italic;
+		position: relative;
+		border-left: 4px solid $color-primary;
+
+		.footer {
+			font-size: 16px;
+			text-transform: uppercase;
 		}
 	}
 }
