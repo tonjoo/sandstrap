@@ -1,4 +1,4 @@
-**Hi. I built it by myself to use on one of my projects. If you really want to use it, feel free.**
+**Hi. I built it to use on one of my projects. If you really want to use it, feel free.**
 
 - - -
 
