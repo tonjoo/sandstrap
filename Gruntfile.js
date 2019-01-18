@@ -48,11 +48,11 @@ module.exports = function(grunt) {
 		uglify: {
 		    production: {
 		    	options: {
-			        sourceMap: true,
+			        sourceMap: false,
 			        sourceMapName: 'src/js/sourcemap.map'
 		    	},
 		      	files: {
-		        	'assets/js/sandstrap.min.js': ['src/js/**/*.js'],
+		        	'assets/js/sandstrap.min.js': 'assets/js/sandstrap.js',
 		    	},
 		    },
 		},
@@ -67,13 +67,13 @@ module.exports = function(grunt) {
 					'assets/js/sandstrap.js': 'src/js/**/*.js'
 				}
 			}
-		}
+		},
 
 		// configure the "grunt watch" task -----------------------------------
 		watch: {
 			javascript: {
 		        files: 'src/**/*.js',
-		        tasks: 'babel'
+		        tasks: ['babel', 'uglify:production']
 		    },
 		 	scripts: {
 		 		files: ['src/**/*.scss', 'demo/**/*.scss'],
@@ -92,4 +92,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-babel');
 };

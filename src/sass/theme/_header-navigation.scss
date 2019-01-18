@@ -448,6 +448,7 @@ body {
 		display: none;
 		background-color: $color-primary;
 		border-top: 1px solid rgba(#fff, .2);
+		z-index: 1055;
 
 		.navbar-nav {
 			margin: 0;
@@ -484,6 +485,11 @@ body {
 	}
 	.navbar-brand {
 		max-width: 180px;
+		padding-left: 15px;
+
+		> img {
+			max-height: 38px;
+		}
 	}
 	.navbar-toggler {
 		width: 25px;

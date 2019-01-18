@@ -16,7 +16,7 @@
                         <div class="content">
                             <ol>
                                 <li>Total css built size: 25KB</li>
-                                <li>Total js built size: 2KB</li>
+                                <li>Total js built size: 6KB</li>
                                 <li>Support pure javascript without jQuery</li>
                             </ol>                       
                         </div>

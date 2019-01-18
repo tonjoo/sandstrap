@@ -17,7 +17,7 @@
 <body class="">
 	
 	<div id="wrapper">
-		<header id="main-header" class="main-header">
+		<header id="main-header" class="main-header header-fixed">
 			<div class="navbar-overlay"></div>
 			<nav class="navbar-top navbar-collapse" id="navbar-top">
 				<div class="container">
