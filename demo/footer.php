@@ -27,7 +27,7 @@
 		else window.addEventListener('load', loadDeferredStyles);
 	</script>
 
-	<script src="../assets/js/script.min.js?v=0.2"></script>
+	<script src="../assets/js/sandstrap.min.js?v=0.2"></script>
 	<script src="assets/js/demo.js"></script>
 </body>
 </html>

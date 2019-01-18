@@ -23,6 +23,30 @@
                     </section>
 
                     <section class="main-section">
+                        <h2 class="section-title" id="get-started">How to Use</h2>
+
+                        <div class="content">
+                            <p><b>CSS</b></p>
+                            <p><pre><?= htmlentities($css, ENT_COMPAT, 'UTF-8')?></pre></p>
+                            <p><b>JS</b></p>
+                            <p><pre><?= htmlentities($js, ENT_COMPAT, 'UTF-8')?></pre></p>
+                        </div>
+                    </section>
+
+                    <section class="main-section">
+                        <h2 class="section-title" id="installation">Installation With Grunt</h2>
+
+                        <div class="content">
+                            <ol>
+                                <li>Before you start installing this framework, make sure you have installed `grunt`, if you haven't already installed it please check <a href="https://gruntjs.com/getting-started first">https://gruntjs.com/getting-started first</a></li>
+                                <li>Run `npm install` to install all dependencies</li>
+                                <li>Run `grunt watch` to watch all changes and recompile the css/js file that you changed</li>
+                                <li>Now you can edit sass/js files based on your needs and enjoy!</li>
+                            </ol>                       
+                        </div>
+                    </section>
+
+                    <section class="main-section">
                         <h2 class="section-title" id="build-system">Build System</h2>
 
                         <div class="content">
@@ -40,14 +64,14 @@
                         <h2 class="section-title" id="js">JS</h2>
 
                         <div class="content">
-                            <p>Fitur js yang disediakan kali ini cuma fitur collapse yang biasa digunakan untuk responsive menu/header</p>
-                            <p>Cara menggunakan mirip dengan punya bootstrap</p>
+                            <p>JS feature provided this time is only a collapse feature which is commonly used for responsive menus / headers</p>
+                            <p>How to use is similar to bootstrap</p>
 
                             <h4>Button/Toggle</h4>
                             <p><pre lang="plaintext"> <?= htmlentities('<a class="collapsed" href="#" title="" data-toggle="collapse" data-target="#navbar" data-animation="false">Menu Toggle</a>', ENT_COMPAT, 'UTF-8')?> </pre></p>
-                            <p>cukup memakai attribute <code>data-toggle="collapse"</code> dan <code>data-target="#id-target"</code>, attribut <code>data-animation="false"</code> digunakan untuk mematikan animasi <code>slideUp</code> dan <code>slideDown</code> dan hanya memakai <code>toggleClass</code></p>
+                            <p>just use attribute <code>data-toggle="collapse"</code> and <code>data-target="#id-target"</code>, attribute <code>data-animation="false"</code> used to turn off animation <code>slideUp</code> and <code>slideDown</code> and only used <code>toggleClass</code></p>
 
-                            <p><b>Contoh target collapse:</b></p>
+                            <p><b>Example target collapse:</b></p>
                             <p><pre lang="plaintext"> <?= htmlentities('<div id="navbar"></div>', ENT_COMPAT, 'UTF-8') ?> </pre></p>
 
                             <p><b>Event: </b></p>
@@ -59,7 +83,7 @@
                         <h2 class="section-title" id="breakpoint">Breakpoint</h2>
 
                         <div class="content">
-                            <p>Breakpoint yg digunakan</p>
+                            <p>Breakpoint used</p>
                             <p><pre><?= $breakpoint ?></pre></p>
                             <p><pre><?= $hasilBreakpointMin ?></pre></p>
                             <p><pre><?= $hasilBreakpointMax ?></pre></p>
@@ -70,7 +94,7 @@
                         <h2 class="section-title" id="grid-example">Grid Example</h2>
                         
                         <div class="content">
-                            <p>Menggunakan full fitur grid bootstrap 4 <code>.container, .row, .col-*-*</code>. Another example you can refer to <a href="https://getbootstrap.com/docs/4.1/layout/grid/">https://getbootstrap.com/docs/4.1/layout/grid/</a></p>
+                            <p>Use full feature bootstrap grid 4 <code>.container, .row, .col-*-*</code>. Another example you can refer to <a href="https://getbootstrap.com/docs/4.1/layout/grid/">https://getbootstrap.com/docs/4.1/layout/grid/</a></p>
 
                             <p><b>Equal Width</b></p>
 
@@ -132,14 +156,44 @@
                                 <div class="col-item"></div>
                             </div>
                         </div>
+
+                        <div class="content">
+                            <p><b>Variable width content</b></p>
+
+                            <p>
+                                <pre><?= htmlentities($grid_var_width, ENT_COMPAT, 'UTF-8') ?></pre>
+                            </p>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-2">
+                                <div class="col-item"></div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="col-item">Variable width content</div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="col-item"></div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="col-item"></div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="col-item">variable width content</div>
+                            </div>
+                            <div class="col-lg-2 col">
+                                <div class="col-item"></div>
+                            </div>
+                        </div>
                     </section>
 
                     <section class="main-section">
                         <h2 class="section-title" id="utilities">Utilities</h2>
 
                         <div class="content">                            
-                            <p>Utilities yang tidak digunakan: <code>.col-offset-*, .col-push-*, .order-*-*</code> dan utilities display flex lainnya. Apabila dibutuhkan silahkan masukan manual di file <code>src/sass/theme/_utilities.scss</code></p>
-                            <p>Utilities default yang disediakan:</p>
+                            <p>Utilities that are not used: <code>.col-offset-*, .col-push-*, .order-*-*</code> and other flex utilities. If needed, please enter manually in the file <code>src/sass/theme/_utilities.scss</code></p>
+                            <p>Default utilities provided:</p>
                             <p><pre><?= htmlentities($utilities, ENT_COMPAT, 'UTF-8') ?></pre></p>
                         </div>
                     </section>
@@ -189,7 +243,7 @@
                     </section>
 
                     <section class="main-section">
-                        <h2 class="section-title" id=""icon>Icon</h2>
+                        <h2 class="section-title" id="icon">Icon</h2>
 
                         <div class="content">
                             <p>Built with <a href="https://ionicons.com/v2/" target="_blank">ionicons v2</a>. to reduce size we only use necessary icon, if you need to add another icon copy icon class in <code>src/sass/ionicons/_ionicons-icons-full.scss</code> and paste to <code>src/sass/ionicons/_ionicons-icons.scss</code></p>

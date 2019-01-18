@@ -1,10 +1,13 @@
 <?php 
-$jsEvent = "$('#target').on('hidden.collapse', function () {
+$jsEvent = "document.getElementById('target').addEventListener('hidden.collapse', function () {
     // event saat target menghilang/hidden
 });
-$('#target').on('show.collapse', function () {
+document.getElementById('target').addEventListener('show.collapse', function () {
     // event saat target tampil/show
 });";
+
+$css = '<link rel="stylesheet" href="assets/css/sandstrap.min.css">';
+$js = '<script src="assets/js/sandstrap.min.js"></script>';
 
 $breakpoint = 'xs: 0,
 sm: 576px,
@@ -198,5 +201,27 @@ $breadcrumb = '<div class="breadcrumb">
         <li><a href="berita.php">Agenda</a></li>
         <li><span>International Conference on Chemistry, Chemical Process and Engineering (IC3PE) 2019</span></li>
     </ul>
+</div>';
+$grid_var_width = 'div class="row justify-content-center">
+    <div class="col-lg-2">
+        <div class="col-item"></div>
+    </div>
+    <div class="col-lg-auto">
+        <div class="col-item">Variable width content</div>
+    </div>
+    <div class="col-lg-2">
+        <div class="col-item"></div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col">
+        <div class="col-item"></div>
+    </div>
+    <div class="col-md-auto">
+        <div class="col-item">variable width content</div>
+    </div>
+    <div class="col-lg-2 col">
+        <div class="col-item"></div>
+    </div>
 </div>';
 ?>

@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					// the first path is the output and the second is the input
-					'assets/css/style.min.css': 'src/sass/style.scss',
+					'assets/css/sandstrap.min.css': 'src/sass/style.scss',
 					'demo/assets/css/demo.css': 'demo/src/sass/style-demo.scss'
 				}
 			},
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 					browsers: ['last 2 versions', 'ie 8', 'ie 9']
 				},
 				files: {
-					'assets/css/style.min.css':'assets/css/style.min.css',
+					'assets/css/sandstrap.min.css':'assets/css/sandstrap.min.css',
 					'demo/assets/css/demo.css':'demo/assets/css/demo.css'
 				}
 			}
@@ -52,16 +52,28 @@ module.exports = function(grunt) {
 			        sourceMapName: 'src/js/sourcemap.map'
 		    	},
 		      	files: {
-		        	'assets/js/script.min.js': ['src/js/**/*.js'],
+		        	'assets/js/sandstrap.min.js': ['src/js/**/*.js'],
 		    	},
 		    },
 		},
+
+		babel: {
+			options: {
+				sourceMap: true,
+				presets: ['@babel/preset-env']
+			},
+			dist: {
+				files: {
+					'assets/js/sandstrap.js': 'src/js/**/*.js'
+				}
+			}
+		}
 
 		// configure the "grunt watch" task -----------------------------------
 		watch: {
 			javascript: {
 		        files: 'src/**/*.js',
-		        tasks: 'uglify:production'
+		        tasks: 'babel'
 		    },
 		 	scripts: {
 		 		files: ['src/**/*.scss', 'demo/**/*.scss'],

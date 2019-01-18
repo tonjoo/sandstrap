@@ -1,7 +1,7 @@
 {
-  "name": "tonjoo-grunt",
+  "name": "sandstrap",
   "version": "1.0.0",
-  "description": "Tonjoo Grunt",
+  "description": "Lightweight and simple css framework with no dependencies",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,10 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.1.0",
     "npm-check-updates": "^2.15.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "grunt-babel": "^8.0.0"
   }
 }

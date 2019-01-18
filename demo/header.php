@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>SANDSTRAP DEMO</title>
 	<link rel="icon" type="image/png" href="assets/images/icon/favicon.png">
-	<link rel="stylesheet" href="../assets/css/style.min.css?v=0.3">
+	<link rel="stylesheet" href="../assets/css/sandstrap.min.css?v=0.3">
 
 	<!-- Demo Style -->
 	<link rel="stylesheet" href="assets/css/demo.css">
 	<!-- End Demo Style -->
 
-	<script src="../assets/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body class="">
@@ -112,8 +112,8 @@
 							</form>
 						</div>
 						<ul class="navbar-nav main-menu ml-lg-auto">
-							<li class="current-menu-item"><a href="index.php">Home</a></li>
-							<li class=""><a href="documentation.php">Documentation</a></li>
+							<!-- <li class="current-menu-item"><a href="index.php">Home</a></li> -->
+							<li class="current-menu-item"><a href="index.php">Documentation</a></li>
 							<li class=""><a href="single.php">Example</a></li>
 							<li class=""><a href="https://git.tonjoo.com/tonjoo/sandstrap">Download</a></li>
 						</ul>
