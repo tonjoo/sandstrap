@@ -116,7 +116,7 @@
 							<li class="current-menu-item"><a href="index.php">Documentation</a></li>
 							<li class=""><a href="single.php">Example</a></li>
 							<li class=""><a href="assets/files/sandstrap-v1.0.zip">Download</a></li>
-							<li class=""><a href="https://github.com/tonjoo/sandstrap">GITHUB</a></li>
+							<li class=""><a href="https://github.com/tonjoo/sandstrap" target="_blank">GITHUB</a></li>
 							
 						</ul>
 						<a class="header-search d-none d-lg-block collapsed" href="#" title="" data-toggle="collapse" data-target="#header-search-form">

@@ -1,3 +1,9 @@
+html {
+	font-family: sans-serif;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba($black, 0);
+}
 body {
 	font-family: $font-base;
 	font-size: 14px;
@@ -5,16 +11,23 @@ body {
 	line-height: 1.5;
 	color: #333;
 	text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
 }
 *, 
 *::before, 
 *::after {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
 }
 img {
 	max-width: 100%;
+}
+svg {
+	overflow: hidden;
+	vertical-align: middle;
 }
 a {
 	color: $color-primary;
@@ -54,11 +67,53 @@ td {
 pre {
 	overflow: auto;
 }
-input {
-	border: 1px solid #ccc;
-	height: 32px;
-	padding: 0 12px;
-	color: #555;
-	outline: 0;
-	appearance: none;
+address {
+	margin-bottom: 1rem;
+	font-style: normal;
+	line-height: inherit;
+}
+input[type="radio"],
+input[type="checkbox"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+	-webkit-appearance: listbox;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+ol,
+ul,
+dl {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+	margin-bottom: 0;
+}
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
 }

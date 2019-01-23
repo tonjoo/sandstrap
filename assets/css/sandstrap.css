@@ -584,6 +584,13 @@
   }
 }
 
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -601,8 +608,17 @@ body {
   box-sizing: border-box;
 }
 
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
 img {
   max-width: 100%;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
 }
 
 a {
@@ -652,13 +668,61 @@ pre {
   overflow: auto;
 }
 
-input {
-  border: 1px solid #ccc;
-  height: 32px;
-  padding: 0 12px;
-  color: #555;
-  outline: 0;
-  appearance: none;
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
 }
 
 .ml-auto {
@@ -750,6 +814,10 @@ input {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .btn {
@@ -1396,7 +1464,7 @@ body.navbar-open .main-header .navbar-overlay {
 }
 
 .breadcrumb {
-  margin: 20px 0 15px;
+  margin: 15px 0;
 }
 
 .breadcrumb ul {
@@ -1449,7 +1517,8 @@ body.navbar-open .main-header .navbar-overlay {
 }
 
 .share-post {
-  margin: 40px -6px 60px;
+  margin-left: -6px;
+  margin-right: -6px;
 }
 
 .share-post__item {
@@ -1641,14 +1710,9 @@ ul.page-numbers > .active span:hover {
 }
 
 .select-box > select {
-  border: 1px solid #ccc;
-  height: 32px;
-  padding: 0 30px 0 12px;
-  color: #555;
+  padding-right: 30px;
   min-width: 200px;
-  border-radius: 2px;
   appearance: none;
-  outline: 0;
 }
 
 .select-box:before {
@@ -1660,6 +1724,45 @@ ul.page-numbers > .active span:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.form-box {
+  margin-bottom: 15px;
+}
+
+.form-box label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 6px 12px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #555;
+  transition: border-color .2s;
+  line-height: 1;
+}
+
+.form-input:focus {
+  outline: 0;
+  border-color: #0c0e86;
+  outline: 0;
+}
+
+textarea.form-input {
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 120px;
+}
+
+.form-submit {
+  min-width: 150px;
 }
 
 .content p, .content h1, .content h2, .content h3, .content h4, .content h5, .content h6,

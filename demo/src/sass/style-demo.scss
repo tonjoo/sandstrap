@@ -28,7 +28,7 @@
 .col-item {
 	border: 1px solid #ddd;
 	height: 70px;
-	background-color: #f1f1f1;
+	background-color: #d2d2d2;
 	padding: 20px;
 }
 code {
@@ -96,4 +96,10 @@ pre {
 	.sidebar--scrolled {
 		top: 121px;
 	}
+}
+.example-code {
+	padding: 15px;
+	border: 1px solid #ccc;
+	background-color: #fafafa;
+	margin-bottom: 30px;
 }

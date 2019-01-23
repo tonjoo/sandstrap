@@ -15,7 +15,7 @@
 
                         <div class="content">
                             <ol>
-                                <li>Total css built size: 25KB</li>
+                                <li>Total css built size: 26KB</li>
                                 <li>Total js built size: 6KB</li>
                                 <li>Support pure javascript without jQuery</li>
                             </ol>                       
@@ -103,25 +103,9 @@
                                 <pre><?= htmlentities($equalWidth, ENT_COMPAT, 'UTF-8') ?></pre>
                             </p>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
+                        <div class="example-code">
+                            <?= $equalWidth ?>
+                        </div> 
 
                         <div class="content">
                             <p><b>Custom Row Gap</b></p>
@@ -130,33 +114,9 @@
                                 <pre><?= htmlentities($custom_gap, ENT_COMPAT, 'UTF-8') ?></pre>
                             </p>
                         </div>
-                        <div class="row gap-15">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row gap-40">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row gap-60">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
+                        <div class="example-code">
+                            <?= $custom_gap ?>
+                        </div> 
 
                         <div class="content">
                             <p><b>Variable width content</b></p>
@@ -165,28 +125,9 @@
                                 <pre><?= htmlentities($grid_var_width, ENT_COMPAT, 'UTF-8') ?></pre>
                             </p>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-2">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col-lg-auto">
-                                <div class="col-item">Variable width content</div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col">
-                                <div class="col-item"></div>
-                            </div>
-                            <div class="col-md-auto">
-                                <div class="col-item">variable width content</div>
-                            </div>
-                            <div class="col-lg-2 col">
-                                <div class="col-item"></div>
-                            </div>
-                        </div>
+                        <div class="example-code">
+                            <?= $grid_var_width ?>
+                        </div> 
                     </section>
 
                     <section class="main-section">
@@ -206,18 +147,10 @@
                             <p>Pagination element</p>
 
                             <p><pre><?= htmlentities($pagination, ENT_COMPAT, 'UTF-8') ?></pre></p>
-                            <div class="pagination-wrapper">
-                                <ul class="page-numbers">
-                                    <li><a class="prev page-numbers" href="#"><span class="ion-chevron-left"></span></a></li>
-                                    <li><span aria-current="page" class="page-numbers current">1</span></li>
-                                    <li><a class="page-numbers" href="#">2</a></li>
-                                    <li><a class="page-numbers" href="#">3</a></li>
-                                    <li><a class="page-numbers" href="#">...</a></li>
-                                    <li><a class="page-numbers" href="#">22</a></li>
-                                    <li><a class="next page-numbers" href="#"><span class="ion-chevron-right"></span></a></li>
-                                </ul>
-                            </div>
                         </div>
+                        <div class="example-code">
+                            <?= $pagination ?>
+                        </div> 
                     </section>
 
                     <section class="main-section">
@@ -234,13 +167,9 @@
                         <div class="content">
                             <p><pre><?= htmlentities($breadcrumb, ENT_COMPAT, 'UTF-8') ?></pre></p>
                         </div>
-                        <div class="breadcrumb">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Category</a></li>
-                                <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span></li>
-                            </ul>
-                        </div>
+                        <div class="example-code">
+                            <?= $breadcrumb ?>
+                        </div>   
                     </section>
 
                     <section class="main-section">
@@ -257,26 +186,9 @@
                         <div class="content">
                             <p><pre><?= htmlentities($share, ENT_COMPAT, 'UTF-8') ?></pre></p>
                         </div>
-                        <div class="share-post d-flex justify-content-end">
-                            <div class="share-post__item">
-                                <a class="social-item social-facebook" href="#"><span class="social-item__icon"><i class="ion-social-facebook"></i></span></a>
-                            </div>
-                            <div class="share-post__item">
-                                <a class="social-item social-twitter" href="#"><span class="social-item__icon"><i class="ion-social-twitter"></i></span></a>
-                            </div>
-                            <div class="share-post__item">
-                                <a class="social-item social-google" href="#"><span class="social-item__icon"><i class="ion-social-googleplus"></i></span></a>
-                            </div>
-                            <div class="share-post__item">
-                                <a class="social-item social-linkedin" href="#"><span class="social-item__icon"><i class="ion-social-linkedin"></i></span></a>
-                            </div>
-                            <div class="share-post__item">
-                                <a href="#" class="social-item social-whatsapp"><i class="ion-social-whatsapp"></i></a>
-                            </div>
-                            <div class="share-post__item">
-                                <a href="#" class="social-item social-instagram"><i class="ion-social-instagram"></i></a>
-                            </div>
-                        </div>                           
+                        <div class="example-code">
+                            <?= $share ?>
+                        </div>                          
                     </section>
 
                     <section class="main-section">
@@ -288,7 +200,9 @@
                             <p><pre><?= htmlentities($make_btn, ENT_COMPAT, 'UTF-8') ?></pre></p>
                         </div>
 
-                        <a href="#" class="btn btn-primary">Example Button</a>
+                        <div class="example-code">
+                            <?= $btn ?>
+                        </div>
                     </section>
 
                     <section class="main-section">
@@ -298,11 +212,15 @@
                             <p>Replace default style <code>select</code></p>
                             <p><pre><?= htmlentities($select, ENT_COMPAT, 'UTF-8') ?></pre></p>
                         </div>
-                        <div class="select-box">
-                            <select name="" id="">
-                                <option value="">Date (newest)</option>
-                                <option value="">Date (latest)</option>
-                            </select>
+                        <div class="example-code">
+                            <?= $select ?>
+                        </div>
+                         <div class="content">
+                            <p><b>Form Example</b></p>
+                            <p><pre><?= htmlentities($form, ENT_COMPAT, 'UTF-8') ?></pre></p>
+                        </div>
+                        <div class="example-code">
+                            <?= $form ?>
                         </div>
                     </section>
 

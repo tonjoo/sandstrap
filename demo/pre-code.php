@@ -123,6 +123,9 @@ $utilities = '.ml-auto {
 }
 .text-center {
     text-align: center;
+}
+.text-right {
+    text-align: right;
 }';
 
 $pagination = '<div class="pagination-wrapper">
@@ -163,7 +166,7 @@ $make_btn = '.btn-custom {
     @include make-btn($bg-color, $fill-color);
 }';
 $select = '<div class="select-box">
-    <select name="" id="">
+    <select name="" id="" class="form-input">
         <option value="">Date (newest)</option>
         <option value="">Date (latest)</option>
     </select>
@@ -202,7 +205,7 @@ $breadcrumb = '<div class="breadcrumb">
         <li><span>International Conference on Chemistry, Chemical Process and Engineering (IC3PE) 2019</span></li>
     </ul>
 </div>';
-$grid_var_width = 'div class="row justify-content-center">
+$grid_var_width = '<div class="row justify-content-center">
     <div class="col-lg-2">
         <div class="col-item"></div>
     </div>
@@ -224,4 +227,30 @@ $grid_var_width = 'div class="row justify-content-center">
         <div class="col-item"></div>
     </div>
 </div>';
+$form = '<form action="">
+    <div class="form-box">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" class="form-input" placeholder="Full Name">
+    </div>
+    <div class="form-box">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="form-input" placeholder="Email">
+    </div>
+    <div class="form-box">
+        <label for="dropdown">Example multiple select</label>
+        <div class="select-box">
+            <select id="dropdown" class="form-input">
+                <option value="">Date (newest)</option>
+                <option value="">Date (latest)</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-box">
+        <label for="address">Address</label>
+        <textarea id="address" rows="3" class="form-input" placeholder="Address"></textarea>
+    </div>
+    <div class="form-box">
+        <input type="submit" class="btn btn-primary form-submit" value="Submit">
+    </div>
+</form>';
 ?>
