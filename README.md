@@ -44,15 +44,15 @@ not uploaded yet
 - Header Footer
 - Javacript -> collapse function
 
+## How to recompile grid
+
+- feel free to edit & delete `src/sass/_grid.scss`
+
 ## Browser support
 
 ![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image]
 --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
-
-## How to recompile grid
-
-- feel free to edit & delete `src/sass/_grid.scss`
 
 # License
 
