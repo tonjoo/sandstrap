@@ -9,3 +9,5 @@ path/
 old-assets/
 languages/
 inc/
+
+!demo/assets/files
