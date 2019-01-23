@@ -1,5 +1,4 @@
 *.log
-*.zip
 *.rar
 .htaccess
 robots.txt
@@ -9,5 +8,3 @@ path/
 old-assets/
 languages/
 inc/
-
-!demo/assets/files
