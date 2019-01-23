@@ -277,16 +277,6 @@
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-	.gap-60 {
-		margin-right: -30px;
-		margin-left: -30px;
-
-		> .col,
-		> [class*="col-"] {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
-	}
 	.gap-40 {
 		margin-right: -20px;
 		margin-left: -20px;

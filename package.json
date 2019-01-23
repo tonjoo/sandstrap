@@ -1,13 +1,43 @@
 {
   "name": "sandstrap",
   "version": "1.0.0",
+  "version_short": "1.0",
   "description": "Lightweight and simple css framework with no dependencies",
-  "main": "Gruntfile.js",
+  "author": "fursandy <fursandyanggita@gmail.com>",
+  "keywords": [
+    "css",
+    "sass",
+    "lightweight",
+    "responsive",
+    "framework",
+    "without-jquery",
+    "web"
+  ],
+  "contributors": [
+    "Tonjoo."
+  ],
+  "style": "assets/css/sandstrap.css",
+  "sass": "src/sass/sandstrap.css",
+  "main": "assets/js/sandstrap",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "grunt build"
   },
-  "author": "Tonjoo",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonjoo/sandstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tonjoo/sandstrap/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=7"
+  },
+  "files": [
+    "assets/{css,js,fonts}/*.{css,js,map,eot,svg,ttf,woff}",
+    "src/js/**/*.{js,map}",
+    "src/sass/**/*.scss"
+  ],
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.4",

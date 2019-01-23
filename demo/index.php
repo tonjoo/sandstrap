@@ -54,6 +54,7 @@
                             <ol>
                                 <li>SASS, to compile file scss to css</li>
                                 <li>Autoprefixer, if previously you often use vendor-prefix mixins, this time we remove vendor-prefix mixin and replace it with grunt autoprefixer module which automatically generates the vendor prefix for major browser support</li>
+                                <li>Babel, used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments</li>
                                 <li>Uglify, to minify js</li>
                                 <li>Watch, to read our file changes and automatically run another dependencies</li>
                             </ol>                       

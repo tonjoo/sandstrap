@@ -132,35 +132,6 @@ const collapseShow = (elm) => {
     document.querySelectorAll(elm)[0].dispatchEvent(event);
 }
 
-/* Header Fixed Function
------------------------------------------------ */
-if (document.readyState !== 'loading') {
-	headerFixed();
-} else {
-	document.addEventListener('DOMContentLoaded', headerFixed);
-}
-
-function headerFixed() {
-	if (document.getElementsByClassName('header-fixed').length) {
-		let headerHeight = outerHeight(document.getElementsByClassName('header-fixed')[0]);
-
-		document.getElementsByTagName('body')[0].classList.add('wrapper-header-fixed');
-		document.getElementsByTagName('body')[0].style.paddingTop = headerHeight+'px';
-
-		console.log(headerHeight);
-	}
-}
-
-function outerHeight(el) {
-	const styles = window.getComputedStyle(el);
-	const height = el.offsetHeight;
-	const borderTopWidth = parseFloat(styles.borderTopWidth);
-	const borderBottomWidth = parseFloat(styles.borderBottomWidth);
-	const paddingTop = parseFloat(styles.paddingTop);
-	const paddingBottom = parseFloat(styles.paddingBottom);
-	return height;
-}
-
 /* Slide Up slide Down Function
 ----------------------------------------------- */
 const defaults = {
@@ -203,20 +174,33 @@ const animate = (element, options, now) => {
         options.startTime = now;
     }
     const currentTime = now - options.startTime;
+    let timeRemoveStyle;
     let animationContinue = currentTime < options.duration;
     let newHeight = options.easing(currentTime, options.startingHeight, options.distanceHeight, options.duration);
     if (animationContinue) {
-        element.style.height = `${newHeight.toFixed(2)}px`;
+        element.style.height = `${newHeight.toFixed(2)}px`;        
         window.requestAnimationFrame((timestamp) => animate(element, options, timestamp));
+
+        clearTimeout(timeRemoveStyle);
+
+        if (options.direction === directions.CLOSE) {
+        	element.style.boxSizing = null;
+        }
+        if (options.direction === directions.OPEN) {
+        	element.style.paddingTop = null;
+		    element.style.paddingBottom = null;
+        }
     }
     else {
         if (options.direction === directions.CLOSE) {
-            element.style.display = 'none';
+            element.style.display = 'none';            
         }
         if (options.direction === directions.OPEN) {
             element.style.display = 'block';
+		    element.style.boxSizing = 'content-box';
         }
-        removeElementAnimationStyles(element);
+
+        timeRemoveStyle = setTimeout(function() { removeElementAnimationStyles(element); }, 300);        
     }
 };
 const setElementAnimationStyles = (element) => {
@@ -224,6 +208,7 @@ const setElementAnimationStyles = (element) => {
     element.style.overflow = 'hidden';
     element.style.marginTop = '0';
     element.style.marginBottom = '0';
+    element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
     element.style.paddingTop = '0';
     element.style.paddingBottom = '0';
 };
@@ -232,6 +217,8 @@ const removeElementAnimationStyles = (element) => {
     element.style.overflow = null;
     element.style.marginTop = null;
     element.style.marginBottom = null;
+    element.style.transition = null;
+    element.style.boxSizing = null; 
     element.style.paddingTop = null;
     element.style.paddingBottom = null;
 };

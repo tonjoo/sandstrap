@@ -26,10 +26,23 @@ module.exports = function(grunt) {
 				},
 				files: {
 					// the first path is the output and the second is the input
-					'assets/css/sandstrap.min.css': 'src/sass/style.scss',
+					'assets/css/sandstrap.min.css': 'src/sass/sandstrap.scss',
 					'demo/assets/css/demo.css': 'demo/src/sass/style-demo.scss'
 				}
 			},
+			unminify: {
+				options: {
+					outputStyle: 'expanded',
+					// nested, expanded, compact, compressed
+					sourceMap: true,
+					// tell Sass to look in the Bootstrap stylesheets directory when compiling
+					loadPath: 'src/sass'
+				},
+				files: {
+					// the first path is the output and the second is the input
+					'assets/css/sandstrap.css': 'src/sass/sandstrap.scss',
+				}
+			}
 		},
 
 		autoprefixer: {
@@ -48,24 +61,38 @@ module.exports = function(grunt) {
 		uglify: {
 		    production: {
 		    	options: {
-			        sourceMap: false,
-			        sourceMapName: 'src/js/sourcemap.map'
+			        sourceMap: true,
+			        sourceMapName: 'assets/js/sourcemap.map'
 		    	},
 		      	files: {
-		        	'assets/js/sandstrap.min.js': 'assets/js/sandstrap.js',
+		        	'assets/js/sandstrap.min.js': 'assets/js/compiled-part/*-compiled.js',
 		    	},
 		    },
+		    unminify: {
+		    	options: {
+		    		sourceMap: true,
+			        sourceMapName: 'assets/js/sourcemap.map',
+			        beautify: true
+		    	},
+		    	files: {
+		        	'assets/js/sandstrap.js': 'assets/js/compiled-part/*-compiled.js',
+		    	},
+		    }
 		},
 
 		babel: {
 			options: {
-				sourceMap: true,
+				sourceMap: false,
 				presets: ['@babel/preset-env']
 			},
 			dist: {
-				files: {
-					'assets/js/sandstrap.js': 'src/js/**/*.js'
-				}
+				files: [{
+					'expand': true,
+					'cwd': 'src/js',
+					'src': '**/*.js',
+					'dest': 'assets/js/compiled-part',
+					'ext': '-compiled.js'
+				}]
 			}
 		},
 
@@ -73,16 +100,17 @@ module.exports = function(grunt) {
 		watch: {
 			javascript: {
 		        files: 'src/**/*.js',
-		        tasks: ['babel', 'uglify:production']
+		        tasks: ['babel', 'uglify:production', 'uglify:beautify']
 		    },
 		 	scripts: {
 		 		files: ['src/**/*.scss', 'demo/**/*.scss'],
-		 		tasks: ['sass:dev', 'autoprefixer']
+		 		tasks: ['sass:dev', 'sass:unminify', 'autoprefixer']
 		 	}
 		}
 	});
 
 	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['babel', 'uglify', 'sass', 'autoprefixer']);
 	// ===========================================================================
 	// LOAD GRUNT PLUGINS ========================================================
 	// ===========================================================================
