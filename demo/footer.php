@@ -1,7 +1,7 @@
 		<footer class="main-footer">
 			<div class="footer-copyright text-center">
 				<div class="container">					
-					<p>&copy; Copyright - Fursandy Anggita Pradana Putra</p>
+					<p>&copy; Copyright - 2019 by Tonjoo Corp</p>
 				</div>
 			</div>
 		</footer>

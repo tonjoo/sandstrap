@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "version_short": "1.0",
   "description": "Lightweight and simple css framework with no dependencies",
-  "author": "fursandy <fursandyanggita@gmail.com>",
+  "author": "Tonjoo",
   "keywords": [
     "css",
     "sass",
@@ -14,7 +14,7 @@
     "web"
   ],
   "contributors": [
-    "Tonjoo."
+    "fursandy <fursandyanggita@gmail.com>"
   ],
   "style": "assets/css/sandstrap.css",
   "sass": "src/sass/sandstrap.css",
