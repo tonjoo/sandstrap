@@ -9,11 +9,7 @@ Full docs with examples: [https://devel.tongkolspace.com/sandstrap/demo/](https:
 If you are using a module bundler like Webpack or Browserify...
 
 ```
-not uploaded yet
-```
-
-```js
-
+npm add sandstrap
 ```
 
 ...or manually inject the minified script into your website.
