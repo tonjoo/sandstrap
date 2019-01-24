@@ -42,7 +42,7 @@ npm add sandstrap
 
 ## How to recompile grid
 
-- If you need to edit recompile grid and using sass. Make sure you have installed `grunt`, if you haven't already installed it please check [https://gruntjs.com/getting-started](https://gruntjs.com/getting-started first)
+- If you need to edit recompile grid and using sass. Make sure you have installed `grunt`, if you haven't already installed it please check https://gruntjs.com/getting-started first
 - Run `npm install` to install all dependencies
 - Run `grunt watch` to watch all changes and recompile the css/js file that you changed
 - Now you can edit sass/js files based on your needs and enjoy!
