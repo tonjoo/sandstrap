@@ -160,6 +160,7 @@ const checkIE = () => {
     // other browser
     return false;
 }
+const version = checkIE();
 const directions = {
     OPEN: 1,
     CLOSE: 2
@@ -188,8 +189,6 @@ const slideDown = (element, args = {}) => {
     options.startingHeight = 0;
     options.distanceHeight = options.to;
     window.requestAnimationFrame((timestamp) => animate(element, options, timestamp));
-
-    console.log(element.scrollHeight);
 };
 const animate = (element, options, now) => {
     if (!options.startTime) {
@@ -210,7 +209,7 @@ const animate = (element, options, now) => {
             } else {
                 element.style.removeAttribute('box-sizing');
             }
-            if (checkIE) {
+            if (version) {
                 element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
             }
         }
@@ -231,7 +230,7 @@ const animate = (element, options, now) => {
         if (options.direction === directions.OPEN) {
             element.style.display = 'block';
 
-            if (!checkIE) {
+            if (!version) {
                 element.style.boxSizing = 'content-box';
             }
         }
@@ -247,7 +246,7 @@ const setElementAnimationStyles = (element) => {
     element.style.paddingTop = '0';
     element.style.paddingBottom = '0';
 
-    if (!checkIE) {
+    if (!version) {
         element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
     }
 };

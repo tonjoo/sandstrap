@@ -171,6 +171,7 @@ var checkIE = function checkIE() {
   return false;
 };
 
+var version = checkIE();
 var directions = {
   OPEN: 1,
   CLOSE: 2
@@ -215,7 +216,6 @@ var slideDown = function slideDown(element) {
   window.requestAnimationFrame(function (timestamp) {
     return animate(element, options, timestamp);
   });
-  console.log(element.scrollHeight);
 };
 
 var animate = function animate(element, options, now) {
@@ -242,7 +242,7 @@ var animate = function animate(element, options, now) {
         element.style.removeAttribute('box-sizing');
       }
 
-      if (checkIE) {
+      if (version) {
         element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
       }
     }
@@ -264,7 +264,7 @@ var animate = function animate(element, options, now) {
     if (options.direction === directions.OPEN) {
       element.style.display = 'block';
 
-      if (!checkIE) {
+      if (!version) {
         element.style.boxSizing = 'content-box';
       }
     }
@@ -283,7 +283,7 @@ var setElementAnimationStyles = function setElementAnimationStyles(element) {
   element.style.paddingTop = '0';
   element.style.paddingBottom = '0';
 
-  if (!checkIE) {
+  if (!version) {
     element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
   }
 };

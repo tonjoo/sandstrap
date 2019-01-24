@@ -83,7 +83,7 @@ var collapseHide = function(e) {
     }
     var o = e.indexOf("Edge/");
     return 0 < o && parseInt(e.substring(o + 5, e.indexOf(".", o)), 10);
-}, directions = {
+}, version = checkIE(), directions = {
     OPEN: 1,
     CLOSE: 2
 }, slideUp = function(t) {
@@ -105,25 +105,25 @@ var collapseHide = function(e) {
     n.direction = directions.OPEN, n.to = t.scrollHeight, n.startingHeight = 0, n.distanceHeight = n.to, 
     window.requestAnimationFrame(function(e) {
         return animate(t, n, e);
-    }), console.log(t.scrollHeight);
+    });
 }, animate = function t(n, o, e) {
     o.startTime || (o.startTime = e);
     var i, a = e - o.startTime, r = a < o.duration, l = o.easing(a, o.startingHeight, o.distanceHeight, o.duration);
     r ? (n.style.height = "".concat(l.toFixed(2), "px"), window.requestAnimationFrame(function(e) {
         return t(n, o, e);
     }), clearTimeout(i), o.direction === directions.CLOSE && (n.style.removeProperty ? n.style.removeProperty("box-sizing") : n.style.removeAttribute("box-sizing"), 
-    checkIE && (n.style.transition = "padding-top .2s, padding-bottom .1s linear .3s")), 
+    version && (n.style.transition = "padding-top .2s, padding-bottom .1s linear .3s")), 
     o.direction === directions.OPEN && (n.style.removeProperty ? (n.style.removeProperty("padding-top"), 
     n.style.removeProperty("padding-bottom")) : (n.style.removeAttribute("padding-top"), 
     n.style.removeAttribute("padding-bottom")))) : (o.direction === directions.CLOSE && (n.style.display = "none"), 
-    o.direction === directions.OPEN && (n.style.display = "block", checkIE || (n.style.boxSizing = "content-box")), 
+    o.direction === directions.OPEN && (n.style.display = "block", version || (n.style.boxSizing = "content-box")), 
     i = setTimeout(function() {
         removeElementAnimationStyles(n);
     }, 300));
 }, setElementAnimationStyles = function(e) {
     e.style.display = "block", e.style.overflow = "hidden", e.style.marginTop = "0", 
     e.style.marginBottom = "0", e.style.paddingTop = "0", e.style.paddingBottom = "0", 
-    checkIE || (e.style.transition = "padding-top .2s, padding-bottom .1s linear .3s");
+    version || (e.style.transition = "padding-top .2s, padding-bottom .1s linear .3s");
 }, removeElementAnimationStyles = function(e) {
     for (var t = [ "height", "overflow", "margin-top", "margin-bottom", "transition", "box-sizing", "padding-top", "padding-bottom" ], n = 0; n < t.length; n++) e.style.removeProperty ? e.style.removeProperty(t[n]) : e.style.removeAttribute(t[n]);
 }, isInteger = function(e) {

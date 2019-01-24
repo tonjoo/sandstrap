@@ -42,7 +42,7 @@
 			<nav class="navbar-primary navbar-expand-lg" aria-label="Main navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="homepage.php" class="navbar-brand"><img src="assets/images/logo-primary.png" alt="Logo FK UII"></a>
+						<a href="index.php" class="navbar-brand"><img src="assets/images/logo-primary.png" alt="Logo FK UII"></a>
 
 						<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-animation="false" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="icon-bar"></span>
