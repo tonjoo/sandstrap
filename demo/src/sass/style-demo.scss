@@ -103,3 +103,28 @@ pre {
 	background-color: #fafafa;
 	margin-bottom: 30px;
 }
+
+@include media-breakpoint-down(lg) {
+	.sidebar-wrap {
+		width: 290px;
+	}
+}
+@include media-breakpoint-down(md) {
+	.sidebar-wrap {
+		width: 100%;
+	}
+	.sidebar {
+		&--scrolled {
+			position: static;
+			width: 100%;
+		}
+		&--bottom {
+			position: static;
+		}		
+	}
+}
+@include media-breakpoint-down(xs) {
+	#page-wrapper {
+		padding: 0 0 40px;
+	}
+}

@@ -6,7 +6,7 @@
 
 Full docs with examples: [https://devel.tongkolspace.com/sandstrap/demo/](https://devel.tongkolspace.com/sandstrap/demo/).
 
-If you are using a module bundler like Webpack or Browserify...
+If you are using a module bundler like npm or Webpack...
 
 ```
 npm add sandstrap

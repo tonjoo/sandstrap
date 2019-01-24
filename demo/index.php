@@ -4,12 +4,12 @@
     <div id="page-wrapper" class="page-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="sidebar-wrap">
                         <?php @include 'sidebar.php'; ?>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <section class="main-section">
                         <h2 class="section-title" id="advantages">Advantages</h2>
 
