@@ -30,7 +30,7 @@ npm add sandstrap
 - Total js built size: 6KB
 - Support pure javascript without jQuery
 
-## Sanstrap Components
+## Sandstrap Components
 - Pagination
 - Breadcrumb
 - Typography
