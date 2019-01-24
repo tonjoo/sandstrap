@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 		        	'assets/js/sandstrap.min.js': 'assets/js/compiled-part/*-compiled.js',
 		    	},
 		    },
-		    unminify: {
+		    beautify: {
 		    	options: {
 		    		sourceMap: true,
 			        sourceMapName: 'assets/js/sourcemap.map',

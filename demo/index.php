@@ -15,7 +15,7 @@
 
                         <div class="content">
                             <ol>
-                                <li>Total css built size: 26KB</li>
+                                <li>Total css built size: 25KB</li>
                                 <li>Total js built size: 6KB</li>
                                 <li>Support pure javascript without jQuery</li>
                             </ol>                       
@@ -38,7 +38,7 @@
 
                         <div class="content">
                             <ol>
-                                <li>Before you start installing this framework, make sure you have installed `grunt`, if you haven't already installed it please check <a href="https://gruntjs.com/getting-started first">https://gruntjs.com/getting-started first</a></li>
+                                <li>Before you start installing this framework, make sure you have installed `grunt`, if you haven't already installed it please check <a href="https://gruntjs.com/getting-started">https://gruntjs.com/getting-started first</a></li>
                                 <li>Run `npm install` to install all dependencies</li>
                                 <li>Run `grunt watch` to watch all changes and recompile the css/js file that you changed</li>
                                 <li>Now you can edit sass/js files based on your needs and enjoy!</li>

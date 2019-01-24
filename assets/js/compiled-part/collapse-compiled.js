@@ -9,13 +9,20 @@ if ('ontouchstart' in window) {
 }
 
 document.addEventListener(ev, function () {
-  document.querySelectorAll('[data-toggle="collapse"]').forEach(function (value, index) {
-    if (!isHidden(value)) {
-      var target = value.getAttribute('data-target');
+  var elmToggle = document.querySelectorAll('[data-toggle="collapse"]');
+
+  for (var _i = 0; _i < elmToggle.length; _i++) {
+    if (!isHidden(elmToggle[_i])) {
+      var target = elmToggle[_i].getAttribute('data-target');
+
       target = document.querySelectorAll(target)[0];
-      var animation = value.getAttribute('data-animation');
+
+      var animation = elmToggle[_i].getAttribute('data-animation');
+
       if (animation === null) animation = true;
-      value.classList.add('collapsed');
+
+      elmToggle[_i].classList.add('collapsed');
+
       target.classList.remove('show');
 
       if (animation === true || animation === 'true') {
@@ -27,24 +34,7 @@ document.addEventListener(ev, function () {
       var event = new CustomEvent('hidden.collapse');
       target.dispatchEvent(event);
     }
-  });
-});
-document.querySelectorAll('[data-toggle="collapse"]').forEach(function (value, index) {
-  var target = value.getAttribute('data-target');
-  target = document.querySelectorAll(target)[0];
-
-  if (!isHidden(value)) {
-    var animation = value.getAttribute('data-animation');
-    if (animation === null) animation = true;
-
-    if (animation === true || animation === 'true') {
-      target.classList.add('slide-hidden');
-    }
   }
-
-  target.addEventListener(ev, function (e) {
-    e.stopPropagation();
-  });
 });
 var toggleCollapse = document.querySelectorAll('[data-toggle="collapse"]');
 
@@ -77,19 +67,32 @@ for (var i = 0; i < toggleCollapse.length; i++) {
     e.stopPropagation();
     e.preventDefault();
   });
-}
+  var target = toggleCollapse[i].getAttribute('data-target');
+  target = document.querySelectorAll(target)[0];
 
-document.querySelectorAll('[data-toggle="collapse"]').forEach(function (value, index) {
-  value.addEventListener(ev, function (e) {
+  if (!isHidden(toggleCollapse[i])) {
+    var animation = toggleCollapse[i].getAttribute('data-animation');
+    if (animation === null) animation = true;
+
+    if (animation === true || animation === 'true') {
+      target.classList.add('slide-hidden');
+    }
+  }
+
+  target.addEventListener(ev, function (e) {
     e.stopPropagation();
   });
-});
-document.querySelectorAll('.navbar-close, .navbar-overlay').forEach(function (value, index) {
-  value.addEventListener(ev, function (e) {
+}
+
+var closeToggle = document.querySelectorAll('.navbar-close, .navbar-overlay');
+
+for (var i = 0; i < closeToggle.length; i++) {
+  closeToggle[i].addEventListener(ev, function (e) {
     collapseHide('#navbar');
     e.stopPropagation();
   });
-});
+}
+
 document.getElementById('navbar').addEventListener('hidden.collapse', function () {
   document.getElementsByTagName('body')[0].classList.remove('navbar-open');
 });
@@ -139,6 +142,35 @@ var defaults = {
     return -diffValue * (currentTime /= dureation) * (currentTime - 2) + startValue;
   }
 };
+
+var checkIE = function checkIE() {
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf('MSIE ');
+
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+
+  var trident = ua.indexOf('Trident/');
+
+  if (trident > 0) {
+    // IE 11 => return version number
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+
+  var edge = ua.indexOf('Edge/');
+
+  if (edge > 0) {
+    // Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  } // other browser
+
+
+  return false;
+};
+
 var directions = {
   OPEN: 1,
   CLOSE: 2
@@ -183,6 +215,7 @@ var slideDown = function slideDown(element) {
   window.requestAnimationFrame(function (timestamp) {
     return animate(element, options, timestamp);
   });
+  console.log(element.scrollHeight);
 };
 
 var animate = function animate(element, options, now) {
@@ -203,12 +236,25 @@ var animate = function animate(element, options, now) {
     clearTimeout(timeRemoveStyle);
 
     if (options.direction === directions.CLOSE) {
-      element.style.boxSizing = null;
+      if (element.style.removeProperty) {
+        element.style.removeProperty('box-sizing');
+      } else {
+        element.style.removeAttribute('box-sizing');
+      }
+
+      if (checkIE) {
+        element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
+      }
     }
 
     if (options.direction === directions.OPEN) {
-      element.style.paddingTop = null;
-      element.style.paddingBottom = null;
+      if (element.style.removeProperty) {
+        element.style.removeProperty('padding-top');
+        element.style.removeProperty('padding-bottom');
+      } else {
+        element.style.removeAttribute('padding-top');
+        element.style.removeAttribute('padding-bottom');
+      }
     }
   } else {
     if (options.direction === directions.CLOSE) {
@@ -217,7 +263,10 @@ var animate = function animate(element, options, now) {
 
     if (options.direction === directions.OPEN) {
       element.style.display = 'block';
-      element.style.boxSizing = 'content-box';
+
+      if (!checkIE) {
+        element.style.boxSizing = 'content-box';
+      }
     }
 
     timeRemoveStyle = setTimeout(function () {
@@ -231,20 +280,24 @@ var setElementAnimationStyles = function setElementAnimationStyles(element) {
   element.style.overflow = 'hidden';
   element.style.marginTop = '0';
   element.style.marginBottom = '0';
-  element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
   element.style.paddingTop = '0';
   element.style.paddingBottom = '0';
+
+  if (!checkIE) {
+    element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
+  }
 };
 
 var removeElementAnimationStyles = function removeElementAnimationStyles(element) {
-  element.style.height = null;
-  element.style.overflow = null;
-  element.style.marginTop = null;
-  element.style.marginBottom = null;
-  element.style.transition = null;
-  element.style.boxSizing = null;
-  element.style.paddingTop = null;
-  element.style.paddingBottom = null;
+  var attrb = ['height', 'overflow', 'margin-top', 'margin-bottom', 'transition', 'box-sizing', 'padding-top', 'padding-bottom'];
+
+  for (var _i2 = 0; _i2 < attrb.length; _i2++) {
+    if (element.style.removeProperty) {
+      element.style.removeProperty(attrb[_i2]);
+    } else {
+      element.style.removeAttribute(attrb[_i2]);
+    }
+  }
 };
 
 var isInteger = function isInteger(value) {
@@ -269,3 +322,21 @@ var easeInOutQuad = function easeInOutQuad(t, b, c, d) {
   if ((t /= d / 2) < 1) return c / 2 * t * t + b;
   return -c / 2 * (--t * (t - 2) - 1) + b;
 };
+
+(function () {
+  if (typeof window.CustomEvent === "function") return false;
+
+  function CustomEvent(event, params) {
+    params = params || {
+      bubbles: false,
+      cancelable: false,
+      detail: undefined
+    };
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+    return evt;
+  }
+
+  CustomEvent.prototype = window.Event.prototype;
+  window.CustomEvent = CustomEvent;
+})();

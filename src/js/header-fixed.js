@@ -19,8 +19,6 @@ function headerFixed() {
 
 		document.getElementsByTagName('body')[0].classList.add('wrapper-header-fixed');
 		document.getElementsByTagName('body')[0].style.paddingTop = headerHeight+'px';
-
-		console.log(headerHeight);
 	}
 }
 function outerHeight(el) {

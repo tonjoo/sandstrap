@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>SANDSTRAP DEMO</title>
 	<link rel="icon" type="image/png" href="assets/images/icon/favicon.png">
@@ -33,53 +34,6 @@
 								<li>
 									<a href="#" title="Email">Email</a>
 								</li>
-								<li class="dropdown pll-parent-menu-item">
-									<?php if (basename($_SERVER['SCRIPT_NAME']) == "home-id.php") { ?>
-									<a class="no-click" href="#">
-										<img src="assets/images/icon/in.gif">
-										<span>Indonesia</span>
-									</a>
-									<ul class="dropdown-menu" role="menu">
-										<li class="lang-item">
-											<a href="index.php">
-												<img src="assets/images/icon/en.gif">
-												<span>English</span>
-											</a>
-										</li>
-									</ul>
-
-									<?php } elseif (basename($_SERVER['SCRIPT_NAME']) == "index.php") { ?>
-									
-									<a class="no-click" href="#">
-										<img src="assets/images/icon/en.gif">
-										<span>English</span>
-									</a>
-									<ul class="dropdown-menu" role="menu">
-										<li class="lang-item">
-											<a href="home-id.php">
-												<img src="assets/images/icon/in.gif">
-												<span>Indonesia</span>
-											</a>
-										</li>
-									</ul>
-
-									<?php } elseif (basename($_SERVER['SCRIPT_NAME']) == "single.php") { ?>
-										
-									<a class="no-click" href="#">
-										<img src="assets/images/icon/en.gif">
-										<span>English</span>
-									</a>
-									<ul class="dropdown-menu" role="menu">
-										<li class="lang-item">
-											<a href="#">
-												<img src="assets/images/icon/in.gif">
-												<span>Indonesia</span>
-											</a>
-										</li>
-									</ul>
-
-									<?php } ?>
-								</li>
 							</ul>
 						</div>
 					</div>
@@ -105,9 +59,9 @@
 						</div>
 						<div class="search-collapse">
 							<form action="">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search...">
-									<button class="form-submit"><i class="ion-ios-search-strong"></i></button>
+								<div class="form-box">
+									<input type="text" class="form-input" placeholder="Search...">
+									<button class="btn-submit"><i class="ion-ios-search-strong"></i></button>
 								</div>
 							</form>
 						</div>

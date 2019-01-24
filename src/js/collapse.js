@@ -5,44 +5,28 @@ if ('ontouchstart' in window) {
 	ev = 'touchstart';
 }
 document.addEventListener(ev, function() {
-	document.querySelectorAll('[data-toggle="collapse"]').forEach((value, index) => {
-		if (!isHidden(value)) {
-			let target = value.getAttribute('data-target');
-			target = document.querySelectorAll(target)[0];
-			let animation = value.getAttribute('data-animation');		
-			if (animation === null) animation = true;
+    const elmToggle = document.querySelectorAll('[data-toggle="collapse"]');
 
-			value.classList.add('collapsed');
-			target.classList.remove('show');
+    for (let i = 0; i < elmToggle.length; i++) {
+        if (!isHidden(elmToggle[i])) {
+            let target = elmToggle[i].getAttribute('data-target');
+            target = document.querySelectorAll(target)[0];
+            let animation = elmToggle[i].getAttribute('data-animation');
+            if (animation === null) animation = true;
 
-			if (animation === true || animation === 'true') {
-				if (!isHidden(target)) {
-					slideUp(target);
-				}
-			}
+            elmToggle[i].classList.add('collapsed');
+            target.classList.remove('show');
 
-			let event = new CustomEvent('hidden.collapse');
-		    target.dispatchEvent(event);
-		}
-	});
-});
+            if (animation === true || animation === 'true') {
+                if (!isHidden(target)) {
+                    slideUp(target);
+                }
+            }
 
-document.querySelectorAll('[data-toggle="collapse"]').forEach((value, index) => {
-	let target = value.getAttribute('data-target');
-	target = document.querySelectorAll(target)[0];
-
-	if (!isHidden(value)) {
-		let animation = value.getAttribute('data-animation');		
-		if (animation === null) animation = true;
-
-		if (animation === true || animation === 'true') {
-			target.classList.add('slide-hidden');
-		}
-	}
-
-	target.addEventListener(ev, function(e) {
-		e.stopPropagation();
-	});
+            let event = new CustomEvent('hidden.collapse');
+            target.dispatchEvent(event);
+        }
+    }
 });
 
 let toggleCollapse = document.querySelectorAll('[data-toggle="collapse"]');
@@ -51,7 +35,7 @@ for (var i = 0; i < toggleCollapse.length; i++) {
 	toggleCollapse[i].addEventListener('click', function(e) {
 		let target = this.getAttribute('data-target');
 		target = document.querySelectorAll(target)[0];
-		let animation = this.getAttribute('data-animation');		
+		let animation = this.getAttribute('data-animation');
 		if (animation === null) animation = true;
 
 		this.classList.toggle('collapsed');
@@ -62,14 +46,14 @@ for (var i = 0; i < toggleCollapse.length; i++) {
 		    target.dispatchEvent(event);
 
 			if (animation === true || animation === 'true') {
-				slideDown(target);				
+				slideDown(target);
 			}
 		} else {
 			let event = new CustomEvent('hidden.collapse');
 		    target.dispatchEvent(event);
 
 			if (animation === true || animation === 'true') {
-				slideUp(target);				
+				slideUp(target);
 			}
 		}
 
@@ -77,20 +61,31 @@ for (var i = 0; i < toggleCollapse.length; i++) {
 		e.preventDefault();
 	});
 
+    let target = toggleCollapse[i].getAttribute('data-target');
+    target = document.querySelectorAll(target)[0];
+
+    if (!isHidden(toggleCollapse[i])) {
+        let animation = toggleCollapse[i].getAttribute('data-animation');
+        if (animation === null) animation = true;
+
+        if (animation === true || animation === 'true') {
+            target.classList.add('slide-hidden');
+        }
+    }
+
+    target.addEventListener(ev, function(e) {
+        e.stopPropagation();
+    });
 }
 
-document.querySelectorAll('[data-toggle="collapse"]').forEach((value, index) => {
-	value.addEventListener(ev, function(e) {
-		e.stopPropagation();
-	});
-});
-document.querySelectorAll('.navbar-close, .navbar-overlay').forEach((value, index) => {
-	value.addEventListener(ev, function(e) {
-		collapseHide('#navbar');
+const closeToggle = document.querySelectorAll('.navbar-close, .navbar-overlay');
+for (var i = 0; i < closeToggle.length; i++) {
+    closeToggle[i].addEventListener(ev, (e) => {
+        collapseHide('#navbar');
 
-		e.stopPropagation();
-	});
-});
+        e.stopPropagation();
+    });
+}
 document.getElementById('navbar').addEventListener('hidden.collapse', function () {
 	document.getElementsByTagName('body')[0].classList.remove('navbar-open');
 });
@@ -140,6 +135,31 @@ const defaults = {
         return -diffValue * (currentTime /= dureation) * (currentTime - 2) + startValue;
     }
 };
+const checkIE = () => {
+    let ua = window.navigator.userAgent;
+
+    let msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+        // IE 10 or older => return version number
+        return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    let trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+        // IE 11 => return version number
+        let rv = ua.indexOf('rv:');
+        return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    let edge = ua.indexOf('Edge/');
+        if (edge > 0) {
+        // Edge (IE 12+) => return version number
+        return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+
+    // other browser
+    return false;
+}
 const directions = {
     OPEN: 1,
     CLOSE: 2
@@ -168,6 +188,8 @@ const slideDown = (element, args = {}) => {
     options.startingHeight = 0;
     options.distanceHeight = options.to;
     window.requestAnimationFrame((timestamp) => animate(element, options, timestamp));
+
+    console.log(element.scrollHeight);
 };
 const animate = (element, options, now) => {
     if (!options.startTime) {
@@ -182,13 +204,24 @@ const animate = (element, options, now) => {
         window.requestAnimationFrame((timestamp) => animate(element, options, timestamp));
 
         clearTimeout(timeRemoveStyle);
-
         if (options.direction === directions.CLOSE) {
-        	element.style.boxSizing = null;
+            if (element.style.removeProperty) {
+                element.style.removeProperty('box-sizing');
+            } else {
+                element.style.removeAttribute('box-sizing');
+            }
+            if (checkIE) {
+                element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
+            }
         }
         if (options.direction === directions.OPEN) {
-        	element.style.paddingTop = null;
-		    element.style.paddingBottom = null;
+            if (element.style.removeProperty) {
+                element.style.removeProperty('padding-top');
+                element.style.removeProperty('padding-bottom');
+            } else {
+                element.style.removeAttribute('padding-top');
+                element.style.removeAttribute('padding-bottom');
+            }
         }
     }
     else {
@@ -197,10 +230,13 @@ const animate = (element, options, now) => {
         }
         if (options.direction === directions.OPEN) {
             element.style.display = 'block';
-		    element.style.boxSizing = 'content-box';
+
+            if (!checkIE) {
+                element.style.boxSizing = 'content-box';
+            }
         }
 
-        timeRemoveStyle = setTimeout(function() { removeElementAnimationStyles(element); }, 300);        
+        timeRemoveStyle = setTimeout(function() { removeElementAnimationStyles(element); }, 300);
     }
 };
 const setElementAnimationStyles = (element) => {
@@ -208,19 +244,32 @@ const setElementAnimationStyles = (element) => {
     element.style.overflow = 'hidden';
     element.style.marginTop = '0';
     element.style.marginBottom = '0';
-    element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
     element.style.paddingTop = '0';
     element.style.paddingBottom = '0';
+
+    if (!checkIE) {
+        element.style.transition = 'padding-top .2s, padding-bottom .1s linear .3s';
+    }
 };
 const removeElementAnimationStyles = (element) => {
-    element.style.height = null;
-    element.style.overflow = null;
-    element.style.marginTop = null;
-    element.style.marginBottom = null;
-    element.style.transition = null;
-    element.style.boxSizing = null; 
-    element.style.paddingTop = null;
-    element.style.paddingBottom = null;
+    let attrb = [
+        'height',
+        'overflow',
+        'margin-top',
+        'margin-bottom',
+        'transition',
+        'box-sizing',
+        'padding-top',
+        'padding-bottom'
+    ];
+
+    for (let i = 0; i < attrb.length; i++) {
+        if (element.style.removeProperty) {
+            element.style.removeProperty(attrb[i]);
+        } else {
+            element.style.removeAttribute(attrb[i]);
+        }
+    }
 };
 const isInteger = (value) => {
     if (Number.isInteger) {
@@ -243,3 +292,18 @@ const easeInOutQuad = (t, b, c, d) => {
         return c / 2 * t * t + b;
     return -c / 2 * ((--t) * (t - 2) - 1) + b;
 };
+
+(function () {
+    if ( typeof window.CustomEvent === "function" ) return false;
+
+    function CustomEvent ( event, params ) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        var evt = document.createEvent( 'CustomEvent' );
+        evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();
