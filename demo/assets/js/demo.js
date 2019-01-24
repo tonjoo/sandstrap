@@ -25,7 +25,7 @@
         headerScroll();
     });
 
-    var sidebarOffset = $('.sidebar').offset().top;
+    var sidebarOffset = $('.sidebar').length ? $('.sidebar').offset().top : null;
 
     function headerScroll(event) {
         var scrollTop = $(window).scrollTop();
