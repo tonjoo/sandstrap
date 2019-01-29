@@ -32,13 +32,15 @@ function outerHeight(el) {
 }
 
 function headerScroll() {
-  var scrollTop = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop;
-  ;
-  var headerElm = document.getElementsByClassName('header-fixed')[0];
+  if (document.getElementsByClassName('header-fixed').length) {
+    var scrollTop = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop;
+    ;
+    var headerElm = document.getElementsByClassName('header-fixed')[0];
 
-  if (scrollTop > 100) {
-    headerElm.classList.add('scrolled');
-  } else {
-    headerElm.classList.remove('scrolled');
+    if (scrollTop > 100) {
+      headerElm.classList.add('scrolled');
+    } else {
+      headerElm.classList.remove('scrolled');
+    }
   }
 }

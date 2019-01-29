@@ -31,12 +31,14 @@ function outerHeight(el) {
 	return height;
 }
 function headerScroll() {
-	const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;;
-	const headerElm = document.getElementsByClassName('header-fixed')[0];
+	if (document.getElementsByClassName('header-fixed').length) {
+		const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;;
+		const headerElm = document.getElementsByClassName('header-fixed')[0];
 
-	if (scrollTop > 100) {
-		headerElm.classList.add('scrolled');
-	} else {
-		headerElm.classList.remove('scrolled');
+		if (scrollTop > 100) {
+			headerElm.classList.add('scrolled');
+		} else {
+			headerElm.classList.remove('scrolled');
+		}
 	}
 }

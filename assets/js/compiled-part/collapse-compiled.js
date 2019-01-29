@@ -93,12 +93,14 @@ for (var i = 0; i < closeToggle.length; i++) {
   });
 }
 
-document.getElementById('navbar').addEventListener('hidden.collapse', function () {
-  document.getElementsByTagName('body')[0].classList.remove('navbar-open');
-});
-document.getElementById('navbar').addEventListener('show.collapse', function () {
-  document.getElementsByTagName('body')[0].classList.add('navbar-open');
-});
+if (document.getElementById('navbar').length) {
+  document.getElementById('navbar').addEventListener('hidden.collapse', function () {
+    document.getElementsByTagName('body')[0].classList.remove('navbar-open');
+  });
+  document.getElementById('navbar').addEventListener('show.collapse', function () {
+    document.getElementsByTagName('body')[0].classList.add('navbar-open');
+  });
+}
 
 function isHidden(el) {
   var style = window.getComputedStyle(el);

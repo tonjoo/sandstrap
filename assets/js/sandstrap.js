@@ -50,11 +50,11 @@ function isHidden(e) {
     return "none" === t.display || "hidden" === t.visibility;
 }
 
-document.getElementById("navbar").addEventListener("hidden.collapse", function() {
+document.getElementById("navbar").length && (document.getElementById("navbar").addEventListener("hidden.collapse", function() {
     document.getElementsByTagName("body")[0].classList.remove("navbar-open");
 }), document.getElementById("navbar").addEventListener("show.collapse", function() {
     document.getElementsByTagName("body")[0].classList.add("navbar-open");
-});
+}));
 
 var collapseHide = function(e) {
     var t = document.querySelectorAll('[data-target="' + e + '"')[0].getAttribute("data-animation");
@@ -152,8 +152,10 @@ function outerHeight(e) {
 }
 
 function headerScroll() {
-    var e = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop, t = document.getElementsByClassName("header-fixed")[0];
-    100 < e ? t.classList.add("scrolled") : t.classList.remove("scrolled");
+    if (document.getElementsByClassName("header-fixed").length) {
+        var e = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop, t = document.getElementsByClassName("header-fixed")[0];
+        100 < e ? t.classList.add("scrolled") : t.classList.remove("scrolled");
+    }
 }
 
 !function() {
